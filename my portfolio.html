@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>G. Vishishta Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      transition: background 0.4s, color 0.4s;
+    }
+    body.dark-mode {
+      background: #121212;
+      color: #e0e0e0;
+    }
+    header {
+      background: #2196F3;
+      text-align: center;
+      padding: 2rem;
+      color: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      position: relative;
+    }
+    .dark-mode header {
+      background: #1e1e1e;
+    }
+    .toggle-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: #ffffff;
+      color: #333;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .dark-mode .toggle-btn {
+      background-color: #333;
+      color: #fff;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      background: #1565C0;
+      padding: 0.7rem 1.2rem;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background: #0D47A1;
+    }
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      margin-bottom: 2rem;
+      transition: background 0.4s, color 0.4s;
+    }
+    .dark-mode section {
+      background-color: #1f1f1f;
+    }
+    .about img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #1565C0;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      background-color: #E3F2FD;
+      color: #333;
+    }
+    .dark-mode footer {
+      background-color: #1a1a1a;
+      color: #aaa;
+    }
+    .hidden {
+      display: none;
+    }
+    .resume-section {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    .resume-section input {
+      display: block;
+      margin: auto;
+      padding: 0.5rem;
+      background: #E3F2FD;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #resumeLink {
+      display: none;
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #1565C0;
+      text-decoration: none;
+    }
+    .skill {
+      margin-bottom: 1rem;
+    }
+    .skill-name {
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+    .skill-bar {
+      height: 20px;
+      background-color: #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .skill-bar-fill {
+      height: 100%;
+      background-color: #2196F3;
+      width: 0%;
+      transition: width 1s;
+    }
+    .dark-mode .skill-bar {
+      background-color: #333;
+    }
+    .dark-mode .skill-bar-fill {
+      background-color: #4FC3F7;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>G. VISHISHTA</h1>
+    <p>Web Developer Intern | Aurora University, Hyderabad</p>
+    <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    <nav>
+      <a href="#" onclick="showSection('about')">About</a>
+      <a href="#" onclick="showSection('skills')">Skills</a>
+      <a href="#" onclick="showSection('projects')">Projects</a>
+      <a href="#" onclick="showSection('experience')">Experience</a>
+      <a href="#" onclick="showSection('contact')">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hi! I am G. Vishishta, currently pursuing B.Tech at Aurora University, Hyderabad. I'm enthusiastic about web development and always eager to learn new technologies. I believe in smart work and enjoy turning ideas into digital reality.</p>
+    <div class="resume-section">
+      <h3>Upload Your Resume</h3>
+      <input type="file" accept="application/pdf" onchange="handleResumeUpload(event)">
+      <a id="resumeLink" href="#" download="G_Vishishta_Resume.pdf">Click here to download my resume</a>
+    </div>
+  </section>
+
+  <section id="skills" class="hidden">
+    <h2>Skills</h2>
+    <div class="skill">
+      <div class="skill-name">C Programming</div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">HTML & CSS</div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">JavaScript</div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="width: 75%;"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Fast Typing</div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Quick Learner & Easy Understanding</div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="width: 100%;"></div></div>
+    </div>
+  </section>
+
+  <section id="projects" class="hidden">
+    <h2>Projects</h2>
+    <p><b>1. Block Chain Simulator</b> – Converting Passwords into encrypted and decrypted form Security.</p>
+    <p><b>2. Logistic System for Smart City</b> - Optimizing transportation using graphs and queues.</p>
+    <p><b>3. PageRank Algorithm</b> - Using Eigenvectors, HTML & JS.</p>
+    <p><b>4. Star Topology</b> - Built using Cisco Packet Tracer.</p>
+    <p><b>5. Simple Calculator</b> - HTML, CSS & JS based calculator with UI.</p>
+    <p><b>6. Automatic Tollgate System</b> - Vehicle detection and gate automation using sensors.</p>
+    <p><b>7. Food Ordering System</b> - C++ based console app with menu, billing, and admin control.</p>
+    <p><b>8. Personal Portfolio</b> - This website!</p>
+    <p><b>9. Landing Page</b> - Landing Page on Ahmedabad Plane Crash.</p>
+  </section>
+
+  <section id="experience" class="hidden">
+    <h2>Experience</h2>
+    <p>Interning at CodSoft in Web Development – great hands-on learning!</p>
+  </section>
+
+  <section id="contact" class="hidden">
+    <h2>Contact Me</h2>
+    <p>Phone: 756952***4</p>
+    <p>Email: vishishta.gunda@aurora.edu.in</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/vishishta-gunda-32b859341/" target="_blank">Visit Profile</a></p>
+  </section>
+
+  <footer>
+    © 2025 G. Vishishta. All rights reserved.
+  </footer>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll("section");
+      sections.forEach(section => section.classList.add("hidden"));
+      document.getElementById(sectionId).classList.remove("hidden");
+    }
+    function handleResumeUpload(event) {
+      const file = event.target.files[0];
+      if (file && file.type === "application/pdf") {
+        const url = URL.createObjectURL(file);
+        const resumeLink = document.getElementById("resumeLink");
+        resumeLink.href = url;
+        resumeLink.style.display = "inline-block";
+      }
+    }
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+
+</body>
+</html>
